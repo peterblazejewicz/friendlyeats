@@ -4,11 +4,15 @@
   "description": "Starting point for the Cloud Firestore codelab",
   "main": ".",
   "scripts": {
-    "fmt": "prettier --write scripts/* styles/*"
+    "fmt": "prettier --write scripts/* styles/*",
+    "build:tsc": "tsc -p ./tsconfig.json",
+    "build:tsc:w": "tsc -p ./tsconfig.json -w"
   },
   "author": "",
   "devDependencies": {
     "eslint": "^4.17.0",
-    "prettier": "^1.5.3"
+    "firebase": "^5.5.5",
+    "prettier": "^1.5.3",
+    "typescript": "^3.1.3"
   }
 }

@@ -1,3 +1,6 @@
+// @ts-nocheck
+/// <reference path="../node_modules/firebase/index.d.ts" />
+/// <reference path="../node_modules/@types/navigo/index.d.ts" />
 /**
  * Copyright 2017 Google Inc. All Rights Reserved.
  *
@@ -16,6 +19,7 @@
 'use strict';
 
 /**
+ * @class
  * Initializes the FriendlyEats app.
  */
 function FriendlyEats() {
@@ -79,6 +83,10 @@ FriendlyEats.prototype.initRouter = function() {
     });
 };
 
+/**
+ * @param {*} dirtyPath
+ * @returns
+ */
 FriendlyEats.prototype.getCleanPath = function(dirtyPath) {
   if (dirtyPath.startsWith('/index.html')) {
     return dirtyPath.split('/').slice(1).join('/');
@@ -91,6 +99,10 @@ FriendlyEats.prototype.getFirebaseConfig = function() {
   return firebase.app().options;
 };
 
+/**
+ * @param {*} arr
+ * @returns
+ */
 FriendlyEats.prototype.getRandomItem = function(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 };
@@ -195,5 +207,6 @@ FriendlyEats.prototype.data = {
 };
 
 window.onload = function() {
+
   window.app = new FriendlyEats();
 };
